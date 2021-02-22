@@ -18,7 +18,7 @@ def relu():
     
   plt.plot(x, z) 
   plt.xlabel("x") 
-  plt.ylabel("Sigmoid(X)") 
+  plt.ylabel("Relu(X)") 
     
   plt.show() 
 
