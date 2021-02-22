@@ -1,8 +1,20 @@
+#Developer : Vinay Venkatesh
+
 import matplotlib.pyplot as plt
 import numpy as np
 from sympy import *
 
 def sigmoid():
+
+  '''
+  In the context of artificial neural networks, the Sigmoid Function is a type of activation function. The Sigmoid Function is often referred
+  to as a squashing function because it limits its outputs to a range between 0 and 1. The Sigmoid Function has an "S" - shaped curve or sigmoid curve.
+
+  This function was intended to be only for visualizing the graph of a sigmoid function.
+
+  Learn More: https://deepai.org/machine-learning-glossary-and-terms/sigmoid-function
+  '''
+
   x = np.linspace(-10, 10, 100) 
   z = 1/(1 + np.exp(-x)) 
     
@@ -13,16 +25,33 @@ def sigmoid():
   plt.show() 
 
 def relu():
+
+  '''
+  In the context of artificial neural networks, the ReLu Function is a type of activation function. The ReLu function directly outputs its input
+  if it is positive. Otherwise, it outputs 0.
+
+  This function was intended to be only for visualizing the graph of a ReLu function.
+
+  Learn More: https://machinelearningmastery.com/rectified-linear-activation-function-for-deep-learning-neural-networks/#.
+  '''
+
   x = np.linspace(-10, 10, 100) 
   z = np.maximum(0, x) 
     
   plt.plot(x, z) 
   plt.xlabel("x") 
-  plt.ylabel("Relu(X)") 
+  plt.ylabel("ReLu(X)") 
     
   plt.show() 
 
 def constant(c):
+
+    '''
+    A constant function is a function whose value is the same for every input value.
+    With a constant function, for any two points in the interval, a change in x results in a zero change in f(x).
+
+    Learn More: https://www.varsitytutors.com/hotmath/hotmath_help/topics/constant-function
+    '''
 
     fig = plt.figure()
     # Hold activation for multiple lines on same graph
@@ -46,6 +75,19 @@ def constant(c):
     plt.show()
 
 def linear(m, b):
+
+  '''
+  A linear function is a function whose graph is a straight line.
+  A linear function has one independent variable and one dependent variable. 
+  The independent variable is x and the dependent variable is y. 
+  The inputs, m and b stand for the slope and y intercept.
+
+  The difference between `linear()` and `psflinear()` is the forms of the linear functions.
+  `psflinear()` is meant to be in a y - y1 = m(x - x1) form and `linear()` is meant to be in a y = mx+b form.
+
+  Learn More: https://www.mathsisfun.com/algebra/linear-equations.html
+  '''
+
   #y = mx + b
   x = np.linspace(-5,5,100)
   y = m*x+b
@@ -74,6 +116,19 @@ def linear(m, b):
     print(f"({result[i]}, 0)")
 
 def psflinear(y1, m, x1):
+
+  '''
+  A linear function is a function whose graph is a straight line.
+  A linear function has one independent variable and one dependent variable. 
+  The independent variable is x and the dependent variable is y. 
+  The inputs, y1 and m and x1 stand for a y coordinate, slope, and x coordinate.
+
+  The difference between `psflinear()` and `linear()` is the forms of the linear functions.
+  `psflinear()` is meant to be in a y - y1 = m(x - x1) form and `linear()` is meant to be in a y = mx+b form.
+
+  Learn More: https://www.mathsisfun.com/algebra/linear-equations.html
+  '''
+
   #y - y1 = m(x - x1)
   x = np.linspace(-5,5,100)
   y = m * (x - x1) + y1
@@ -101,8 +156,19 @@ def psflinear(y1, m, x1):
   for i in range(0, len(result)):
     print(f"({result[i]}, 0)")
 
-# 100 linearly spaced numbers
 def quadratic(a, b, c):
+
+  '''
+  In algebra, a quadratic function, a quadratic polynomial, a 
+  polynomial of degree 2, or simply a quadratic, is a polynomial 
+  function with one or more variables in which the highest-degree term is of the second degree. 
+
+  The difference between `quadratic()` and `vtquadratic()` is the forms of the quadratic functions.
+  `quadratic()` is meant to be in a ax^2 + bx + c form and `vtquadratic()` is meant to be in a a(x - h)^2 + k form.
+
+  Learn More: https://www.mathsisfun.com/algebra/quadratic-equation.html
+  '''
+
   #Y = AX^2 + BX + C
   if a == 0:
     print("a cannot be 0")
@@ -140,6 +206,18 @@ def quadratic(a, b, c):
     plt.ylim((0,c*2))
     x = np.linspace(-20,20,100)
   # plot the function
+
+  else:
+    numList = []
+    numList.append(a)
+    numList.append(b)
+    numList.append(c)
+    for i in range(0, len(numList)):
+      if numList[i] < 0:
+        numList[i] = -1 * numList[i]
+
+    plt.ylim((-1 * max(numList) * 5, max(numList) * 5))
+  
   plt.plot(x,y, 'r', label=f'{a}x^2+{b}x+{c}')
   plt.title(f'Quadratic Graph')
   # show the plot
@@ -165,8 +243,19 @@ def quadratic(a, b, c):
   elif len(result) == 1:
     print(f"X-Intercept: ({result[0]}, 0)")
 
-
 def vtquadratic(a, h, k):
+
+  '''
+  In algebra, a quadratic function, a quadratic polynomial, a 
+  polynomial of degree 2, or simply a quadratic, is a polynomial 
+  function with one or more variables in which the highest-degree term is of the second degree. 
+
+  The difference between `quadratic()` and `vtquadratic()` is the forms of the quadratic functions.
+  `quadratic()` is meant to be in a ax^2 + bx + c form and `vtquadratic()` is meant to be in a a(x - h)^2 + k form.
+
+  Learn More: https://www.mathsisfun.com/algebra/quadratic-equation.html
+  '''
+
   #y = a(x - h)^2 + k
   if a == 0:
     print("a cannot be 0")
@@ -210,6 +299,17 @@ def vtquadratic(a, h, k):
     plt.ylim((0,k*3))
     x = np.linspace(-100,100,100)
 
+  else:
+    numList = []
+    numList.append(a)
+    numList.append(h)
+    numList.append(k)
+    for i in range(0, len(numList)):
+      if numList[i] < 0:
+        numList[i] = -1 * numList[i]
+
+    plt.ylim((-1 * max(numList) * 5, max(numList) * 5))
+
   # plot the function
   plt.plot(x,y, 'r', label=f'{a}(x-{h})^2+{k}')
   plt.title(f'Quadratic Graph')
@@ -239,6 +339,15 @@ def vtquadratic(a, h, k):
     print(f"X-Intercept: ({result[0]}, 0)")
 
 def cubic(a, b, c, d):
+
+  '''
+  In mathematics, a cubic function is a function of the form f(x)=ax^3+bx^2+cx+d 
+  where the coefficients a, b, c, and d are real numbers, and the variable x takes real values, 
+  and a ≠ 0. In other words, it is both a polynomial function of degree three, and a real function.
+
+  Learn More: https://www.varsitytutors.com/hotmath/hotmath_help/topics/cubic-functions
+  '''
+
   #ax^3+bx^2+cx+d
   if a == 0:
     print("a cannot be 0")
@@ -292,7 +401,18 @@ def cubic(a, b, c, d):
   elif d >= 20001:
     plt.ylim((0,d*3))
     #x = np.linspace(-100,100,100)
-  
+
+  else:
+    numList = []
+    numList.append(a)
+    numList.append(b)
+    numList.append(c)
+    numList.append(d)
+    for i in range(0, len(numList)):
+      if numList[i] < 0:
+        numList[i] = -1 * numList[i]
+
+    plt.ylim((-1 * max(numList) * 5, max(numList) * 5))  
 
   # plot the function
   plt.plot(x,y, 'r', label=f'{a}x^3+{b}x^2+{c}x+{d}')
@@ -324,8 +444,16 @@ def cubic(a, b, c, d):
     print(f"X-Intercept(s): ({result[0]}, 0), ({result[1]}, 0)")
   if len(result) == 3:
     print(f"X-Intercept(s): ({result[0]}, 0), ({result[1]}, 0), ({result[2]}, 0)")
-  
+
 def trigsin(z, b):
+
+  '''
+  In mathematics, the trigonometric functions are real functions which relate
+  an angle of a right-angled triangle to ratios of two side lengths. 
+
+  Learn More: https://www.mathsisfun.com/sine-cosine-tangent.html
+  '''
+
   x = np.linspace(-np.pi,np.pi,100)
 
   # the function, which is y = sin(x) here
@@ -354,6 +482,14 @@ def trigsin(z, b):
   plt.show()
 
 def trigcos(z, b):
+
+  '''
+  In mathematics, the trigonometric functions are real functions which relate
+  an angle of a right-angled triangle to ratios of two side lengths. 
+
+  Learn More: https://www.mathsisfun.com/sine-cosine-tangent.html
+  '''
+  
   x = np.linspace(-np.pi,np.pi,100)
 
   # the function, which is y = sin(x) here
@@ -381,6 +517,14 @@ def trigcos(z, b):
   plt.show()
 
 def trigtan(z, b):
+
+  '''
+  In mathematics, the trigonometric functions are real functions which relate
+  an angle of a right-angled triangle to ratios of two side lengths. 
+
+  Learn More: https://www.mathsisfun.com/sine-cosine-tangent.html
+  '''
+
   x = np.linspace(-np.pi,np.pi,100)
 
   # the function, which is y = sin(x) here
@@ -407,3 +551,267 @@ def trigtan(z, b):
   # show the plot
   plt.show()
 
+def quartic(a, b, c, d, e):
+
+  '''
+  In algebra, a quartic function is a function of the form f(x)=ax^{4}+bx^{3}+cx^{2}+dx+e, 
+  where a is nonzero, which is defined by a polynomial of degree four, called a quartic polynomial.
+
+  Learn More: https://www.calculushowto.com/types-of-functions/quartic-function/
+  '''
+
+  if a == 0:
+    print("a cannot be 0")
+
+  x = np.linspace(-6,6,100)
+  if b <= -18 and b >= -29:
+    x = np.linspace(b,-b,100)
+  elif b <= -30:
+    x = np.linspace(b/2, -b/2, 100)
+  elif b >= 10 and b <= 29:
+    x = np.linspace(b,-b,100)
+  elif b >= 30:
+    x = np.linspace(b/2, -b/2, 100)
+
+  # the function, which is y = x^2 here
+  y = a * x**4 + b * x**3 + c * x**2 + d*x + e
+
+  # setting the axes at the centre
+  fig = plt.figure()
+  ax = fig.add_subplot(1, 1, 1)
+  ax.spines['left'].set_position('center')
+  ax.spines['bottom'].set_position('zero')
+  ax.spines['right'].set_color('none')
+  ax.spines['top'].set_color('none')
+  ax.xaxis.set_ticks_position('bottom')
+  ax.yaxis.set_ticks_position('left')
+  
+  #positive constraints
+  if b >= -5 and b <= 0:
+    plt.ylim((-6,6))
+  elif b < -5 and b >= -9:
+    plt.ylim((b*3,-b*3))
+  elif b < -9 and b > -16:
+    plt.ylim((b*-b,-b*-b))
+  elif b <= -16 and b >= -27:
+    plt.ylim((b*-b*3,-b*-b*3))
+  elif b <= -28 and b >= -35:
+    plt.ylim((b*-b*5,-b*-b*5))
+  elif b <= -35 and b >= -120:
+    plt.ylim((b*-b*-b/2,-b*-b*-b/2))
+  elif b <= -121:
+    plt.ylim((b*-b*-b,-b*-b*-b))
+
+
+  #negative constraints
+  elif b <= 5 and b >= 0:
+    plt.ylim((-6,6))
+  elif b > 5 and b <= 9:
+    plt.ylim((-b*3,b*3))
+  elif b > 9 and b < 16:
+    plt.ylim((b*-b,-b*-b))
+  elif b >= 16 and b <= 27:
+    plt.ylim((b*-b*3,-b*-b*3))
+  elif b >= 28 and b <= 35:
+    plt.ylim((b*-b*5,-b*-b*5))
+  elif b >= 35 and b <= 120:
+    plt.ylim((b*b*-b/2,-b*b*-b/2))
+  elif b >= 121:
+    plt.ylim((b*-b*-b,-b*-b*-b))
+
+  if e == 0:
+    plt.ylim((-5,5))
+  elif e > b:
+    plt.ylim((-e*2,e*2))
+  elif e * -1 > b * -1:
+    plt.ylim((e*2,-e*2))
+  
+  else:
+    numList = []
+    numList.append(a)
+    numList.append(b)
+    numList.append(c)
+    numList.append(d)
+    numList.append(e)
+    for i in range(0, len(numList)):
+      if numList[i] < 0:
+        numList[i] = -1 * numList[i]
+
+    plt.ylim((-1 * max(numList) * 5, max(numList) * 5))
+
+  #plt.ylim((-5,5))
+  # plot the function
+  plt.plot(x,y, 'r', label=f'{a}x^4+{b}x^3+{c}x^2+{d}x+{e}')
+  plt.title('Quartic Graph')
+
+  plt.show()
+
+  print(f"Y-Intercept: (0, {e})")
+
+  x, y = symbols('x y')
+
+  equation = Eq(y, a * x**4 + b * x**3 + c * x**2 + d*x + e)
+
+  # Use sympy.subs() method
+  result = solve(equation.subs(y, 0))
+  for i in range(0, len(result)):
+    result[i] = result[i].simplify().evalf()
+    try:
+      result[i] = round(result[i], 3)
+    except:
+      pass
+
+  print(f"X-Intercept(s): ")
+  for i in range(0, len(result)):
+    print(f"({result[i]}, 0)")
+
+def quintic(a, b, c, d, e, f):
+
+  '''
+  In algebra, a quintic function is a function of the form g(x)=ax^{5}+bx^{4}+cx^{3}+dx^{2}+ex+f,
+  where a, b, c, d, e and f are members of a field, typically the rational numbers, the real numbers or the complex numbers, 
+  and a is nonzero. In other words, a quintic function is defined by a polynomial of degree five.
+
+  Learn More: https://www.calculushowto.com/quintic-function-polynomial/
+  '''
+
+  if a == 0:
+    print("a cannot be 0")
+
+  x = np.linspace(-6,6,100)
+  if b <= -18 and b >= -29:
+    x = np.linspace(b,-b,100)
+  elif b <= -30:
+    x = np.linspace(b/2, -b/2, 100)
+  elif b >= 10 and b <= 29:
+    x = np.linspace(b,-b,100)
+  elif b >= 30:
+    x = np.linspace(b/2, -b/2, 100)
+
+  # the function, which is y = x^2 here
+  y = a * x**5 + b * x**4 + c * x**3 + d*x**2 + e*x + f
+
+  # setting the axes at the centre
+  fig = plt.figure()
+  ax = fig.add_subplot(1, 1, 1)
+  ax.spines['left'].set_position('center')
+  ax.spines['bottom'].set_position('zero')
+  ax.spines['right'].set_color('none')
+  ax.spines['top'].set_color('none')
+  ax.xaxis.set_ticks_position('bottom')
+  ax.yaxis.set_ticks_position('left')
+
+  if b >= 10 and b <= 29:
+    plt.ylim((-b*5,b*5))
+
+  else:
+    numList = []
+    numList.append(a)
+    numList.append(b)
+    numList.append(c)
+    numList.append(d)
+    numList.append(e)
+    numList.append(f)
+    for i in range(0, len(numList)):
+      if numList[i] < 0:
+        numList[i] = -1 * numList[i]
+
+    plt.ylim((-1 * max(numList) * 5, max(numList) * 5))
+
+  plt.plot(x,y, 'r', label=f'{a}x^5+{b}x^4+{c}x^3+{d}x^2+{e}x+{f}')
+  plt.title('Quintic Graph')
+
+  plt.show()
+
+  print(f"Y-Intercept: (0, {f})")
+
+  x, y = symbols('x y')
+
+  equation = Eq(y, a * x**5 + b * x**4 + c * x**3 + d*x**2 + e*x + f)
+
+  # Use sympy.subs() method
+  result = solve(equation.subs(y, 0))
+  for i in range(0, len(result)):
+    result[i] = result[i].simplify().evalf()
+    try:
+      result[i] = round(result[i], 3)
+    except:
+      pass
+
+  print(f"X-Intercept(s): ")
+  for i in range(0, len(result)):
+    print(f"({result[i]}, 0)")
+
+def sextic(a, b, c, d, e, f, g):
+
+  '''
+  A sextic function is a function defined by a sextic polynomial. Because they have an even degree,
+  sextic functions appear similar to quartic functions when graphed, except they may possess an additional local
+  maximum and local minimum each. The derivative of a sextic function is a quintic function.
+
+  Learn More: https://www.calculushowto.com/sextic-function/
+  '''
+
+  if a == 0:
+    print("a cannot be 0")
+
+  x = np.linspace(-6,6,100)
+  if b <= -18 and b >= -29:
+    x = np.linspace(b,-b,100)
+  elif b <= -30:
+    x = np.linspace(b/2, -b/2, 100)
+  elif b >= 10 and b <= 29:
+    x = np.linspace(b,-b,100)
+  elif b >= 30:
+    x = np.linspace(b/2, -b/2, 100)
+
+  # the function, which is y = x^2 here
+  y = a * x**6 + b * x**5 + c * x**4 + d*x**3 + e*x**2 + f*x + g
+
+  # setting the axes at the centre
+  fig = plt.figure()
+  ax = fig.add_subplot(1, 1, 1)
+  ax.spines['left'].set_position('center')
+  ax.spines['bottom'].set_position('zero')
+  ax.spines['right'].set_color('none')
+  ax.spines['top'].set_color('none')
+  ax.xaxis.set_ticks_position('bottom')
+  ax.yaxis.set_ticks_position('left')
+
+  numList = []
+  numList.append(a)
+  numList.append(b)
+  numList.append(c)
+  numList.append(d)
+  numList.append(e)
+  numList.append(f)
+  numList.append(g)
+  for i in range(0, len(numList)):
+    if numList[i] < 0:
+      numList[i] = -1 * numList[i]
+
+  plt.ylim((-1 * max(numList) * 5, max(numList) * 5))
+
+  plt.plot(x,y, 'r', label=f'{a}x^6+{b}x^5+{c}x^4+{d}x^3+{e}x^2+{f}x+{g}')
+  plt.title('Sextic Graph')
+
+  plt.show()
+
+  print(f"Y-Intercept: (0, {g})")
+
+  x, y = symbols('x y')
+
+  equation = Eq(y, a * x**6 + b * x**5 + c * x**4 + d*x**3 + e*x**2 + f*x + g)
+
+  # Use sympy.subs() method
+  result = solve(equation.subs(y, 0))
+  for i in range(0, len(result)):
+    result[i] = result[i].simplify().evalf()
+    try:
+      result[i] = round(result[i], 3)
+    except:
+      pass
+
+  print(f"X-Intercept(s): ")
+  for i in range(0, len(result)):
+    print(f"({result[i]}, 0)")
