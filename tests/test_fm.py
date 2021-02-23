@@ -63,3 +63,19 @@ def test_quintic():
 def test_sextic():
 
     fmgraph.sextic(2, 4, 0, 2, 10, 4, 2)
+
+def test_logFun():
+
+    fmgraph.logFun(10, 20)
+
+def test_absVal():
+
+    fmgraph.absVal(12, -11, 12)
+
+def test_isPrime():
+
+    fm.isPrime(15)
+
+def test_isSquare():
+
+    fm.isSquare(36)

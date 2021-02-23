@@ -815,3 +815,72 @@ def sextic(a, b, c, d, e, f, g):
   print(f"X-Intercept(s): ")
   for i in range(0, len(result)):
     print(f"({result[i]}, 0)")
+
+def logFun(a, b):
+
+  '''
+  Logarithm (log) In mathematics, the logarithm is the inverse function to exponentiation.
+  That means the logarithm of a given number x is the exponent to which another fixed number,
+  the base b, must be raised, to produce that number x.
+
+  Learn More: https://www.mathsisfun.com/sets/function-logarithmic.html
+  '''
+
+  if a == 0:
+    print("a cannot be 0")
+  elif b == 0:
+    print("b cannot be 0")
+
+  x = np.linspace(-6,6,100)
+
+  # the function, which is y = x^2 here
+  y = a * np.log(b * x)
+
+  fig = plt.figure()
+
+  numList = []
+  numList.append(a)
+  numList.append(b)
+  for i in range(0, len(numList)):
+    if numList[i] < 0:
+      numList[i] = -1 * numList[i]
+
+  plt.ylim((-1 * max(numList) * 5, max(numList) * 5))
+
+  plt.plot(x,y, 'r') #label=f'{a}x^6+{b}x^5+{c}x^4+{d}x^3+{e}x^2+{f}x+{g}')
+  plt.title('Log Graph')
+
+  plt.show()
+
+def absVal(a, b, c):
+
+  '''
+  An absolute value function is a function that contains an algebraic expression within absolute value symbols. 
+
+  Learn More: https://www.varsitytutors.com/hotmath/hotmath_help/topics/absolute-value-functions
+  '''
+
+  if a == 0:
+    print("a cannot be 0")
+  elif b == 0:
+    print("b cannot be 0")
+
+  numList = []
+  numList.append(a)
+  numList.append(b)
+  numList.append(c)
+  for i in range(0, len(numList)):
+    if numList[i] < 0:
+      numList[i] = -1 * numList[i]
+
+  fig = plt.figure()
+
+  plt.ylim((-1 * max(numList) * 5, max(numList) * 5))
+  x = np.linspace(-5 * max(numList),max(numList)*5,100)
+  # the function, which is y = x^2 here
+  y = a * abs(b + x) + c
+
+  plt.plot(x,y, 'r') #label=f'{a}x^6+{b}x^5+{c}x^4+{d}x^3+{e}x^2+{f}x+{g}')
+  plt.title('Absolute Value Graph')
+
+  plt.show()
