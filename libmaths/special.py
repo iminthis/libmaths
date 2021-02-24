@@ -27,10 +27,8 @@ def logFun(a, b):
 
   fig = plt.figure()
 
-  numList = []
-  numList.append(a)
-  numList.append(b)
-  for i in range(0, len(numList)):
+  numList = [a, b]
+  for i in range(len(numList)):
     if numList[i] < 0:
       numList[i] = -1 * numList[i]
 
@@ -54,11 +52,8 @@ def absVal(a, b, c):
   elif b == 0:
     print("b cannot be 0")
 
-  numList = []
-  numList.append(a)
-  numList.append(b)
-  numList.append(c)
-  for i in range(0, len(numList)):
+  numList = [a, b, c]
+  for i in range(len(numList)):
     if numList[i] < 0:
       numList[i] = -1 * numList[i]
 

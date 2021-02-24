@@ -57,11 +57,8 @@ def quadratic(a, b, c):
   # plot the function
 
   else:
-    numList = []
-    numList.append(a)
-    numList.append(b)
-    numList.append(c)
-    for i in range(0, len(numList)):
+    numList = [a, b, c]
+    for i in range(len(numList)):
       if numList[i] < 0:
         numList[i] = -1 * numList[i]
 
@@ -150,11 +147,8 @@ def vtquadratic(a, h, k):
     x = np.linspace(-100,100,100)
 
   else:
-    numList = []
-    numList.append(a)
-    numList.append(h)
-    numList.append(k)
-    for i in range(0, len(numList)):
+    numList = [a, h, k]
+    for i in range(len(numList)):
       if numList[i] < 0:
         numList[i] = -1 * numList[i]
 
@@ -253,12 +247,8 @@ def cubic(a, b, c, d):
     #x = np.linspace(-100,100,100)
 
   else:
-    numList = []
-    numList.append(a)
-    numList.append(b)
-    numList.append(c)
-    numList.append(d)
-    for i in range(0, len(numList)):
+    numList = [a, b, c, d]
+    for i in range(len(numList)):
       if numList[i] < 0:
         numList[i] = -1 * numList[i]
 
@@ -371,13 +361,8 @@ def quartic(a, b, c, d, e):
     plt.ylim((e*2,-e*2))
   
   else:
-    numList = []
-    numList.append(a)
-    numList.append(b)
-    numList.append(c)
-    numList.append(d)
-    numList.append(e)
-    for i in range(0, len(numList)):
+    numList = [a, b, c, d, e]
+    for i in range(len(numList)):
       if numList[i] < 0:
         numList[i] = -1 * numList[i]
 
@@ -449,14 +434,8 @@ def quintic(a, b, c, d, e, f):
     plt.ylim((-b*5,b*5))
 
   else:
-    numList = []
-    numList.append(a)
-    numList.append(b)
-    numList.append(c)
-    numList.append(d)
-    numList.append(e)
-    numList.append(f)
-    for i in range(0, len(numList)):
+    numList = [a, b, c, d, e, f]
+    for i in range(len(numList)):
       if numList[i] < 0:
         numList[i] = -1 * numList[i]
 
@@ -522,15 +501,8 @@ def sextic(a, b, c, d, e, f, g):
   ax.xaxis.set_ticks_position('bottom')
   ax.yaxis.set_ticks_position('left')
 
-  numList = []
-  numList.append(a)
-  numList.append(b)
-  numList.append(c)
-  numList.append(d)
-  numList.append(e)
-  numList.append(f)
-  numList.append(g)
-  for i in range(0, len(numList)):
+  numList = [a, b, c, d, e, f, g]
+  for i in range(len(numList)):
     if numList[i] < 0:
       numList[i] = -1 * numList[i]
 
