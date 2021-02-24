@@ -6,7 +6,6 @@
 
 ![python](https://img.shields.io/badge/python-3.8%20%7C%203.9-blueviolet)
 ![License](https://img.shields.io/badge/license-MIT-informational)
-![pypi](https://img.shields.io/badge/PyPi-v0.1.1-important)
 
 libmaths was created not only as a learning experience for me,
 but as a way to make mathematical models in seconds for Python users
