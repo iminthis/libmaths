@@ -20,6 +20,21 @@ from linear to sextic and more, graphing in your code will be a breeze.
     <br />
 </p>
 
+## Installation
+
+The package is available on PyPI. Install with:
+
+``` shell
+pip install libmaths
+```
+or
+```shell
+pip3 install libmaths
+```
+
+libmaths only supports Python 3.8 and above, so please make sure you are on the
+newest version.
+
 ## General Usage
 
 There are many functions, but here is one example:
@@ -36,22 +51,6 @@ polynomial.quadratic(2, 4, 6)
 
 If you need more assistance, examples are provided
 [here.](https://github.com/Simple2006/libmaths/blob/main/examples/libmathsGraph.ipynb)
-
-## Installation
-
-The package is available on PyPI. Install with:
-
-``` shell
-pip install libmaths
-```
-or
-```shell
-pip3 install libmaths
-```
-
-libmaths only supports Python 3.8 and above, so please make sure you are on the
-newest version.
-
 
 ## General Information
 
@@ -96,6 +95,10 @@ The mathematical functions provided in libmaths are listed below:
         -   isPrime
         -   isSquare
         -   Divisor
+
+## Public References
+
+r/Python : [r/Python Post](https://www.reddit.com/r/Python/comments/lr583o/python_math_library_made_in_3_days_as_a_14/)
 
 ## Future Plans
 
