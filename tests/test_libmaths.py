@@ -1,18 +1,22 @@
-#NO OUTPUT - KNOWN
-
 from libmaths import linear, polynomial, trig, special, other
 
 def test_sigmoid():
+    a = 0
+    expected_result = 0.5
+    result = other.sigmoid(0)
 
-    print(other.sigmoid(0))
+    assert expected_result == result
 
 def test_sigmoid1():
     
     special.sigmoid()
 
 def test_relu():
+    a = 10
+    expected_result = 10
+    result = other.relu(a)
 
-    print(other.relu(5))
+    assert expected_result == result
 
 def test_relu1():
 
@@ -79,9 +83,15 @@ def test_isPrime():
     other.isPrime(15)
 
 def test_isSquare():
+    a = 36
+    expected_result = True
+    result = other.isSquare(a)
 
-    other.isSquare(36)
+    assert expected_result == result
 
 def test_divisor():
+    a = 100
+    expected_result = 9
+    result = other.divisor(a)
 
-    other.divisor(12)
+    assert expected_result == result

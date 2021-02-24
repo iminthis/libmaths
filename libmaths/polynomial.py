@@ -3,7 +3,7 @@
 
 import matplotlib.pyplot as plt
 import numpy as np
-from sympy import *
+from sympy import simplify, evalf, symbols, Eq, solve
 
 def quadratic(a, b, c):
 
@@ -57,10 +57,7 @@ def quadratic(a, b, c):
   # plot the function
 
   else:
-    numList = [a, b, c]
-    for i in range(len(numList)):
-      if numList[i] < 0:
-        numList[i] = -1 * numList[i]
+    numList = [abs(a), abs(b), abs(c)]
 
     plt.ylim((-1 * max(numList) * 5, max(numList) * 5))
   
@@ -147,10 +144,7 @@ def vtquadratic(a, h, k):
     x = np.linspace(-100,100,100)
 
   else:
-    numList = [a, h, k]
-    for i in range(len(numList)):
-      if numList[i] < 0:
-        numList[i] = -1 * numList[i]
+    numList = [abs(a), abs(h), abs(k)]
 
     plt.ylim((-1 * max(numList) * 5, max(numList) * 5))
 
@@ -247,10 +241,7 @@ def cubic(a, b, c, d):
     #x = np.linspace(-100,100,100)
 
   else:
-    numList = [a, b, c, d]
-    for i in range(len(numList)):
-      if numList[i] < 0:
-        numList[i] = -1 * numList[i]
+    numList = [abs(a), abs(b), abs(c), abs(d)]
 
     plt.ylim((-1 * max(numList) * 5, max(numList) * 5))  
 
@@ -361,10 +352,7 @@ def quartic(a, b, c, d, e):
     plt.ylim((e*2,-e*2))
   
   else:
-    numList = [a, b, c, d, e]
-    for i in range(len(numList)):
-      if numList[i] < 0:
-        numList[i] = -1 * numList[i]
+    numList = [abs(a), abs(b), abs(c), abs(d), abs(e)]
 
     plt.ylim((-1 * max(numList) * 5, max(numList) * 5))
 
@@ -434,10 +422,7 @@ def quintic(a, b, c, d, e, f):
     plt.ylim((-b*5,b*5))
 
   else:
-    numList = [a, b, c, d, e, f]
-    for i in range(len(numList)):
-      if numList[i] < 0:
-        numList[i] = -1 * numList[i]
+    numList = [abs(a), abs(b), abs(c), abs(d), abs(e), abs(f)]
 
     plt.ylim((-1 * max(numList) * 5, max(numList) * 5))
 
@@ -501,10 +486,7 @@ def sextic(a, b, c, d, e, f, g):
   ax.xaxis.set_ticks_position('bottom')
   ax.yaxis.set_ticks_position('left')
 
-  numList = [a, b, c, d, e, f, g]
-  for i in range(len(numList)):
-    if numList[i] < 0:
-      numList[i] = -1 * numList[i]
+  numList = [abs(a), abs(b), abs(c), abs(d), abs(e), abs(f), abs(g)]
 
   plt.ylim((-1 * max(numList) * 5, max(numList) * 5))
 

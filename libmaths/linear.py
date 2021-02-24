@@ -3,7 +3,7 @@
 
 import matplotlib.pyplot as plt
 import numpy as np
-from sympy import *
+from sympy import simplify, evalf, symbols, Eq, solve
 
 def constant(c):
 

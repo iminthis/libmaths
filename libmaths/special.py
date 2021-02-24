@@ -3,7 +3,7 @@
 
 import matplotlib.pyplot as plt
 import numpy as np
-from sympy import *
+from sympy import simplify, evalf, symbols, Eq, solve
 
 def logFun(a, b):
 
@@ -27,10 +27,7 @@ def logFun(a, b):
 
   fig = plt.figure()
 
-  numList = [a, b]
-  for i in range(len(numList)):
-    if numList[i] < 0:
-      numList[i] = -1 * numList[i]
+  numList = [abs(a), abs(b)]
 
   plt.ylim((-1 * max(numList) * 5, max(numList) * 5))
 
@@ -52,10 +49,7 @@ def absVal(a, b, c):
   elif b == 0:
     raise ValueError("b cannot be 0")
 
-  numList = [a, b, c]
-  for i in range(len(numList)):
-    if numList[i] < 0:
-      numList[i] = -1 * numList[i]
+  numList = [abs(a), abs(b), abs(c)]
 
   fig = plt.figure()
 

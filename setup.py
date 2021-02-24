@@ -8,13 +8,15 @@ with open("requirements.txt") as reqs:
 
 setuptools.setup(
     name="libmaths",
-    version="0.1.6",
+    version="0.1.7",
     author="Vinay Venkatesh",
     author_email="vinayven01@gmail.com",
     description="LibMaths is a Python library created to assist programmers with complex mathematical functions as well as for learning more about Python.",
     long_description=long_description,
     keywords=["Machine Learning", "Math", "Python"],
     install_requires=requirements,
+    setup_requires=['pytest-runner'],
+    tests_require=['pytest==4.4.1'],
     long_description_content_type="text/markdown",
     url="https://github.com/Simple2006/libmaths",
     packages=setuptools.find_packages(),
