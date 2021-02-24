@@ -84,7 +84,8 @@ def quadratic(a, b, c):
   result = solve(equation.subs(y, 0))
 
   for i in range(0, len(result)):
-    result[i] = round(result[i].simplify().evalf(),3)
+    if type(result[i]) == int or type(result[i]) == float:
+      result[i] = round(result[i].simplify().evalf(),3)
 
   #print(result)
   if len(result) == 2:
