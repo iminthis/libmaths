@@ -1,3 +1,6 @@
+#Developer : Vinay Venkatesh
+#Date : 2/20/2021
+
 def trigsin(z, b):
 
   '''
