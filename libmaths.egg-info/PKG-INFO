@@ -1,18 +1,21 @@
 Metadata-Version: 2.1
 Name: libmaths
-Version: 0.1.0
+Version: 0.1.1
 Summary: LibMaths is a Python library created to assist programmers with complex mathematical functions as well as for learning more about Python.
 Home-page: https://github.com/Simple2006/libmaths
 Author: Vinay Venkatesh
 Author-email: vinayven01@gmail.com
-License: UNKNOWN
+License: MIT
+Project-URL: Source Code, https://github.com/Simple2006/libmaths
 Description: # libmaths
         A Python library created to assist programmers with complex mathematical functions
         
 Keywords: Machine Learning,Math,Python
 Platform: UNKNOWN
-Classifier: Programming Language :: Python :: 3
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Developers
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
 Classifier: License :: OSI Approved :: MIT License
-Classifier: Operating System :: OS Independent
 Requires-Python: >=3.8
 Description-Content-Type: text/markdown

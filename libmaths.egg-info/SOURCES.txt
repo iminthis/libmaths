@@ -1,4 +1,5 @@
 README.md
+setup.cfg
 setup.py
 libmaths/__init__.py
 libmaths/linear.py
