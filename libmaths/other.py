@@ -17,7 +17,7 @@ def isPrime(*integers):
     if value > 1:
     
         # Iterate from 2 to n / 2
-        for i in range(2, value / 2):
+        for i in range(2, int((value / 2) ** 0.5)):
     
             # If num is divisible by any number between
             # 2 and n / 2, it is not prime
