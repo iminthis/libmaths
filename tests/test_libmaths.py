@@ -79,3 +79,7 @@ def test_isPrime():
 def test_isSquare():
 
     other.isSquare(36)
+
+def test_divisor():
+
+    other.divisor(12)

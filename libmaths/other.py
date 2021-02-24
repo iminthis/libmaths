@@ -42,3 +42,15 @@ def isSquare(*integers):
             print(value, "is a perfect square")
           else:
             print(value, "is not a perfect square")
+
+def divisor(x):
+
+  count = 0
+
+  for i in range(1, x+1):
+    
+    if x % i == 0:
+      
+      count += 1
+
+  return(count)
