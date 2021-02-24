@@ -1,3 +1,6 @@
+#Author : Vinay Venkatesh
+#Date : 2/20/2021
+
 import numpy as np
 import math
 
