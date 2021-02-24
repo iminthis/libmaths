@@ -20,6 +20,21 @@ from linear to sextic and more, graphing in your code will be a breeze.
     <br />
 </p>
 
+## Installation
+
+The package is available on PyPI. Install with:
+
+``` shell
+pip install libmaths
+```
+or
+```shell
+pip3 install libmaths
+```
+
+libmaths only supports Python 3.8 and above, so please make sure you are on the
+newest version.
+
 ## General Usage
 
 There are many functions, but here is one example:
@@ -37,25 +52,9 @@ polynomial.quadratic(2, 4, 6)
 If you need more assistance, examples are provided
 [here.](https://github.com/Simple2006/libmaths/blob/main/examples/libmathsGraph.ipynb)
 
-## Installation
-
-The package is available on PyPI. Install with:
-
-``` shell
-pip install libmaths
-```
-or
-```shell
-pip3 install libmaths
-```
-
-libmaths only supports Python 3.8 and above, so please make sure you are on the
-newest version.
-
-
 ## General Information
 
-libmaths was created by me, a 14-year old high schooler at Lynbrook High School 3 days ago on 2/20/2021. libmath exists to help reduce the incapability to make quick and accurate models in Python within seconds. With a limited usage of external libraries and access to a multitude of functions, libmath's variety is one of the many things that makes it unique. With the creation of this library, I hope to bring simplicity and accuracy together.
+libmaths was created by me, a 14-year old high schooler at Lynbrook High School 3 days ago on 2/20/2021. libmaths exists to help reduce the incapability to make quick and accurate models in Python within seconds. With a limited usage of external libraries and access to a multitude of functions, libmaths' variety is one of the many things that makes it unique. With the creation of this library, I hope to bring simplicity and accuracy together.
 
 ## Documentation
 
@@ -96,6 +95,10 @@ The mathematical functions provided in libmaths are listed below:
         -   isPrime
         -   isSquare
         -   Divisor
+
+## Public References
+
+r/Python : [r/Python Post](https://www.reddit.com/r/Python/comments/lr583o/python_math_library_made_in_3_days_as_a_14/)
 
 ## Future Plans
 
