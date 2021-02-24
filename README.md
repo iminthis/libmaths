@@ -55,7 +55,7 @@ newest version.
 
 ## General Information
 
-libmaths was created by me, a 14-year old high schooler at Lynbrook High School 3 days ago on 2/20/2021. libmath exists to help reduce the incapability to make quick and accurate models in Python within seconds. With a limited usage of external libraries and access to a multitude of functions, libmath's variety is one of the many things that makes it unique. With the creation of this library, I hope to bring simplicity and accuracy together.
+libmaths was created by me, a 14-year old high schooler at Lynbrook High School 3 days ago on 2/20/2021. libmaths exists to help reduce the incapability to make quick and accurate models in Python within seconds. With a limited usage of external libraries and access to a multitude of functions, libmaths' variety is one of the many things that makes it unique. With the creation of this library, I hope to bring simplicity and accuracy together.
 
 ## Documentation
 
