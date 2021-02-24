@@ -16,7 +16,7 @@ from linear to sextic and more, graphing in your code will be a breeze.
 ## Quick Demo
 
 <p align="center">
-    <img src="" width = 580 height = 326>
+    <img src="https://raw.githubusercontent.com/Simple2006/libmaths/main/example.gif" width = 580 height = 326>
     <br />
 </p>
 
