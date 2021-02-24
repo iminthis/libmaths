@@ -20,7 +20,7 @@ def quadratic(a, b, c):
 
   #Y = AX^2 + BX + C
   if a == 0:
-    print("a cannot be 0")
+    raise ValueError("a cannot be 0")
   x = np.linspace(-6,6,100)
 
   # the function, which is y = x^2 here
@@ -105,7 +105,7 @@ def vtquadratic(a, h, k):
 
   #y = a(x - h)^2 + k
   if a == 0:
-    print("a cannot be 0")
+    raise ValueError("a cannot be 0")
 
   if h < 0:
     x = np.linspace(h-5, (-1 * h) + 5,100)
@@ -194,7 +194,7 @@ def cubic(a, b, c, d):
 
   #ax^3+bx^2+cx+d
   if a == 0:
-    print("a cannot be 0")
+    raise ValueError("a cannot be 0")
 
   x = np.linspace(-6,6,100)
   if d >= 1000:
@@ -295,7 +295,7 @@ def quartic(a, b, c, d, e):
   '''
 
   if a == 0:
-    print("a cannot be 0")
+    raise ValueError("a cannot be 0")
 
   x = np.linspace(-6,6,100)
   if b <= -18 and b >= -29:
@@ -405,7 +405,7 @@ def quintic(a, b, c, d, e, f):
   '''
 
   if a == 0:
-    print("a cannot be 0")
+    raise ValueError("a cannot be 0")
 
   x = np.linspace(-6,6,100)
   if b <= -18 and b >= -29:
@@ -476,7 +476,7 @@ def sextic(a, b, c, d, e, f, g):
   '''
 
   if a == 0:
-    print("a cannot be 0")
+    raise ValueError("a cannot be 0")
 
   x = np.linspace(-6,6,100)
   if b <= -18 and b >= -29:

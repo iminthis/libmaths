@@ -16,9 +16,9 @@ def logFun(a, b):
   '''
 
   if a == 0:
-    print("a cannot be 0")
+    raise ValueError("a cannot be 0")
   elif b == 0:
-    print("b cannot be 0")
+    raise ValueError("b cannot be 0")
 
   x = np.linspace(-6,6,100)
 
@@ -48,9 +48,9 @@ def absVal(a, b, c):
   '''
 
   if a == 0:
-    print("a cannot be 0")
+    raise ValueError("a cannot be 0")
   elif b == 0:
-    print("b cannot be 0")
+    raise ValueError("b cannot be 0")
 
   numList = [a, b, c]
   for i in range(len(numList)):
