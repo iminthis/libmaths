@@ -5,46 +5,6 @@ import matplotlib.pyplot as plt
 import numpy as np
 from sympy import *
 
-def sigmoid():
-
-  '''
-  In the context of artificial neural networks, the Sigmoid Function is a type of activation function. The Sigmoid Function is often referred
-  to as a squashing function because it limits its outputs to a range between 0 and 1. The Sigmoid Function has an "S" - shaped curve or sigmoid curve.
-
-  This function was intended to be only for visualizing the graph of a sigmoid function.
-
-  Learn More: https://deepai.org/machine-learning-glossary-and-terms/sigmoid-function
-  '''
-
-  x = np.linspace(-10, 10, 100) 
-  z = 1/(1 + np.exp(-x)) 
-    
-  plt.plot(x, z) 
-  plt.xlabel("x") 
-  plt.ylabel("Sigmoid(X)") 
-    
-  plt.show() 
-
-def relu():
-
-  '''
-  In the context of artificial neural networks, the ReLu Function is a type of activation function. The ReLu function directly outputs its input
-  if it is positive. Otherwise, it outputs 0.
-
-  This function was intended to be only for visualizing the graph of a ReLu function.
-
-  Learn More: https://machinelearningmastery.com/rectified-linear-activation-function-for-deep-learning-neural-networks/#.
-  '''
-
-  x = np.linspace(-10, 10, 100) 
-  z = np.maximum(0, x) 
-    
-  plt.plot(x, z) 
-  plt.xlabel("x") 
-  plt.ylabel("ReLu(X)") 
-    
-  plt.show() 
-
 def constant(c):
 
     '''
