@@ -3,7 +3,6 @@
 
 import matplotlib.pyplot as plt
 import numpy as np
-from sympy import *
 
 def trigsin(z, b):
 
