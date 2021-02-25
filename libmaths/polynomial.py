@@ -4,6 +4,7 @@
 import copy
 import matplotlib.pyplot as plt
 import numpy as np
+from itertools import zip_longest
 from sympy import simplify, evalf, symbols, Eq, solve
 
 POLY_CLASS = {0:'constant', 1:'linear', 2:'quadratic', 3:'cubic', 4:'quartic', 5:'quintic', 6:'sextic'}
@@ -132,7 +133,8 @@ class Polynomial:
     '''
     self.poly_str = 'y = ' 
     for i in range(self.degree+1):
-      self.poly_str += str(round(self.coeffs[self.degree-i], 2))+'x'+convert_degree_to_superscript(self.degree-i)+'+'
+      if self.coeffs[self.degree-i] != 0:
+        self.poly_str += str(round(self.coeffs[self.degree-i], 2))+'x'+convert_degree_to_superscript(self.degree-i)+'+'
     self.poly_str = self.poly_str.replace("+-", "-").replace("x⁰", "").replace("x¹","x")
     self.poly_str = self.poly_str[:-1]
 
@@ -143,6 +145,22 @@ class Polynomial:
     Same as __str__ but it is used when a list of objects is printed
     '''
     return self.__str__()
+
+  def __add__(self, other):
+    '''
+    Tells python how to add two Polynomial objects
+    '''
+    degree = max(other.degree, self.degree)
+    result = copy.deepcopy(self)
+    result.degree = degree
+
+    ind = 0
+    for coeff1, coeff2 in zip_longest(self.coeffs, other.coeffs, fillvalue=0):
+      result.coeffs[ind] = coeff1 + coeff2
+      ind += 1
+    while result.coeffs[result.degree] == 0: result.degree -= 1
+
+    return result
 
 def quadratic(a, b, c):
 
