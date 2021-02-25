@@ -4,7 +4,7 @@
 
 # libmaths
 
-![python](https://img.shields.io/badge/python-3.8%20%7C%203.9-blueviolet)
+![python](https://img.shields.io/badge/python-3%20%7C%203.6%20%7C%203.7%20%7C%203.8%20%7C%203.9%20-blueviolet)
 ![License](https://img.shields.io/badge/license-MIT-informational)
 
 libmaths was created not only as a learning experience for me,
