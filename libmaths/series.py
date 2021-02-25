@@ -98,7 +98,7 @@ class Series:
             x.append(i)
             y.append(self.sum(i))
 
-class ArithmetiSeries(Series):
+class ArithmeticSeries(Series):
     pass 
 
 class GeometricSeries(Series):
