@@ -17,7 +17,7 @@ def isPrime(*integers):
   for value in integers:
     if value > 1:
     
-      for i in range(2, int((value/2 ** 0.5))+1):
+      for i in range(2, int((value ** 0.5))+1):
     
         if (value % i) == 0:
           output = False
