@@ -162,6 +162,21 @@ class Polynomial:
 
     return result
 
+  def __mul__(self, other):
+    '''
+    Tells python how to multiply two Polynomial objects
+    '''
+    result = copy.deepcopy(self)
+    result.degree = self.degree + other.degree 
+    result.coeffs = [0 for i in range(result.degree+1)]
+
+    for j in range(result.degree+1):
+      for k in range(j+1):
+        if j-k <= self.degree and k <= other.degree:
+          result.coeffs[j] += self.coeffs[j-k]*other.coeffs[k]
+
+    return result
+
 def quadratic(a, b, c):
 
   '''
