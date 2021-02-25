@@ -17,10 +17,8 @@ def isPrime(*integers):
   for value in integers:
     if value > 1:
     
-      
-      for i in range(2, int((value / 2))+1):
+      for i in range(2, int((value ** 0.5))+1):
     
-
         if (value % i) == 0:
           output = False
           print(value, output)
@@ -30,20 +28,19 @@ def isPrime(*integers):
         print(value, output)
 
 def isSquare(*integers):
-
+ 
+  #if x >= 0,
   for value in integers: 
     if value >= 0:
       sr = math.sqrt(value)
           
       #return boolean T/F
-      if sr**2 == value:
+      if sr**2 == value and sr.is_integer():
         output = True
         print(value, output)
-        return output
       else:
         output = False
         print(value, output)
-        return output
 
 def divisor(x):
 
