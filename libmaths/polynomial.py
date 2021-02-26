@@ -1,9 +1,181 @@
 #Developer : Vinay Venkatesh
 #Date : 2/20/2021
 
+import copy
 import matplotlib.pyplot as plt
 import numpy as np
+from itertools import zip_longest
 from sympy import simplify, evalf, symbols, Eq, solve
+
+POLY_CLASS = {0:'constant', 1:'linear', 2:'quadratic', 3:'cubic', 4:'quartic', 5:'quintic', 6:'sextic'}
+SUPERSCRIPTS = "⁰¹²³⁴⁵⁶⁷⁸⁹"
+
+def convert_degree_to_superscript(deg):
+  deg_str = ''
+  for i in str(deg):
+    deg_str += SUPERSCRIPTS[int(i)]
+
+  return deg_str
+
+class Polynomial:
+  '''
+  Template for a general n-degree polynomial
+  coeffs: a vector of coefficients
+  '''
+  def __init__(self, coeffs=[0]):
+    self.degree = len(coeffs)-1
+    # this while loop because degree is highest non zero term
+    while coeffs[self.degree] == 0: self.degree -= 1
+    self.coeffs = coeffs 
+    self.poly_class = POLY_CLASS.get(self.degree)
+    if self.poly_class:
+      self.poly_class = 'polynomial'
+    self.poly_str = None
+    # useful things you can compute about the polynomial
+    self.roots = [] 
+    self.maximas = []
+    self.minimas = []
+    self.maximum = None 
+    self.minimum = None
+
+  def plot(self, i_min=-6, i_max=-6, n=100):
+    '''
+    Function to plot n equally spaced points from i_min to i_max
+    This is pretty basic. Please modify it as you see fit
+    '''
+    x = np.linspace(i_min, i_max, n)
+    y = []
+    for i in x:
+      y.append(self.eval(x))
+    plot(x, y)
+
+  def eval(self, x):
+    '''
+    Evaluate polynomial at a particular point
+    '''
+    value = 0
+    for i,coeff in enumerate(self.coeffs):
+      value += coeff*x**i      
+
+    return value
+
+  def find_maximas(self):
+    '''
+    This is difficult for a general polynomial, 
+    so deal with it case by case (like quintic, quadratic etc.)
+    '''
+    pass
+
+  def find_minimas(self):
+    '''
+    This is difficult for a general polynomial, 
+    so deal with it case by case (like quintic, quadratic etc.)
+    '''
+    pass
+
+  def derivative(self, x=None):
+    '''
+    If a particular point is not supplied, then
+    the coefficients of the object are modified (inplace derivative)
+    '''
+    temp = []
+    for i,coeff in enumerate(self.coeffs):
+      temp.append(i*coeff)
+    temp = temp[1:]
+
+    if x:
+      coeff_copy = copy.deepcopy(self.coeffs)
+      self.coeffs = temp
+      value = self.eval(x)
+      self.coeffs = coeff_copy
+
+      return value
+
+    else:
+      self.degree -= 1
+      self.coeffs = temp
+
+      return None 
+
+  def integral(self, a=None, b=None):
+    '''
+    If a particular value of a and b is not supplied, then
+    the coefficients of the object are modified (idefinite integral)
+    '''
+    temp = []
+    for i,coeff in enumerate(self.coeffs):
+      temp.append(coeff/(i+1))
+    temp = [0]+temp
+
+    if a != None or b != None:
+      # if just one of and b is missing then set it to zero
+      if a:
+        b = 0
+      else:
+        a = 0
+      coeff_copy = copy.deepcopy(self.coeffs)
+      self.coeffs = temp
+      value_a = self.eval(a)
+      value_b = self.eval(b)
+      self.coeffs = coeff_copy
+
+      return value_b - value_a
+
+    else:
+      self.degree += 1
+      self.coeffs = temp
+
+      return None
+
+  def __str__(self):
+    '''
+    This function tell print what string it should dislpay when an object of this class is displayed
+    '''
+    self.poly_str = 'y = ' 
+    for i in range(self.degree+1):
+      if self.coeffs[self.degree-i] != 0:
+        self.poly_str += str(round(self.coeffs[self.degree-i], 2))+'x'+convert_degree_to_superscript(self.degree-i)+'+'
+    self.poly_str = self.poly_str.replace("+-", "-").replace("x⁰", "").replace("x¹","x")
+    self.poly_str = self.poly_str[:-1]
+
+    return self.poly_str 
+
+  def __repr__(self):
+    '''
+    Same as __str__ but it is used when a list of objects is printed
+    '''
+    return self.__str__()
+
+  def __add__(self, other):
+    '''
+    Tells python how to add two Polynomial objects
+    '''
+    degree = max(other.degree, self.degree)
+    result = copy.deepcopy(self)
+    result.degree = degree
+
+    ind = 0
+    for coeff1, coeff2 in zip_longest(self.coeffs, other.coeffs, fillvalue=0):
+      result.coeffs[ind] = coeff1 + coeff2
+      ind += 1
+    while result.coeffs[result.degree] == 0: result.degree -= 1
+
+    return result
+
+  def __mul__(self, other):
+    '''
+    Tells python how to multiply two Polynomial objects
+    '''
+    result = copy.deepcopy(self)
+    result.degree = self.degree + other.degree 
+    result.coeffs = [0 for i in range(result.degree+1)]
+
+    for j in range(result.degree+1):
+      for k in range(j+1):
+        if j-k <= self.degree and k <= other.degree:
+          result.coeffs[j] += self.coeffs[j-k]*other.coeffs[k]
+
+    return result
 
 def quadratic(a, b, c):
 
