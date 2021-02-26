@@ -8,7 +8,7 @@ with open("requirements.txt") as reqs:
 
 setuptools.setup(
     name="libmaths",
-    version="0.1.7",
+    version="0.1.8",
     author="Vinay Venkatesh",
     author_email="vinayven01@gmail.com",
     description="LibMaths is a Python library created to assist programmers with complex mathematical functions as well as for learning more about Python.",
