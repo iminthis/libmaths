@@ -124,6 +124,6 @@ If you have any feedback or something you would like to tell me, please
 do not hesitate to share! Feel free to comment here on github or reach
 out to me through <vinayven01@gmail.com>!
 
-readme design from sealion
+readme design from [sealion](https://github.com/anish-lakkapragada/SeaLion)
 
 ©Vinay Venkatesh 2021
